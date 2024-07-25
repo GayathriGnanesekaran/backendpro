@@ -1,0 +1,39 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+        <span class="navbar-text" style="color: white;font-size: 20px;">AGRI CONNECT</span>
+        <ul class="navbar-nav justify-content ">
+            <li class="nav-item">
+            <a href="{% url 'about' %}" class="nav-link " style="color: white;font-size: 20px;">ABOUT</a>
+            </li> 
+            <li class="nav-item">
+                <a href="{% url 'collection' %}" class="nav-link" style="color: white;font-size: 20px;">PRODUCTS</a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="{% url 'query'%}" class="nav-link" style="color: white;font-size: 20px;">QUERY</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'scheme'%}" class="nav-link" style="color: white;font-size: 20px;">SCHEMES</a>
+            </li>
+            
+            {% if request.user.is_authenticated%} 
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: white;font-size: 20px;"><i class="fa fa-user"></i>{{request.user}}</a>
+
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'logouts' %}" class="nav-link" style="color: white;font-size: 20px;">LOGOUT</a> 
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a href="{% url 'login' %}" class="nav-link" style="color: white;font-size: 20px;">LOGIN</a> 
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'signup' %}" class="nav-link" style="color: white;font-size: 20px;">SIGNUP</a> 
+            </li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>

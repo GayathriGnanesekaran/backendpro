@@ -1,0 +1,14 @@
+body{
+    background-image: url('/static/assets/videos/crop.gif');
+    background-repeat: no-repeat;
+    
+}
+.containers{
+    
+    width: 500px;
+    height:400px;
+    background-color:white;
+    margin-top: 150px;
+    margin-left: 400px;
+    padding-left: 50px;
+}

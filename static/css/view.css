@@ -1,0 +1,12 @@
+.oldprice{
+    font-weight: bold;
+    color: red;
+}
+
+.newprice{
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    padding: 2px;
+    border-radius: 2px;
+}

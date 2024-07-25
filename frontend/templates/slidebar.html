@@ -1,0 +1,46 @@
+{% load static %}
+<div id="demo" class="carousel slide" data-bs-slide="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#dem0" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+   </div>
+   <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="{% static '/assets/images/rice.jpg'%}" alt="img1" class="d-block w-100">
+        <div class="carousel-caption" >
+            <h3>ORGANIC PRODUCTS</h3>
+            <p>
+
+                Experience the purity of natural ingredients, eco-friendly practices, and non-GMO assurance. Enjoy health benefits with lower pesticide residues and higher nutrition. Certified for quality and authenticity, promoting a sustainable lifestyle.</p>
+
+        </div>
+    </div>
+    <div class="carousel-item">
+       <img src="{% static '/assets/images/sch.jpg'%}" alt="img2" class="d-block w-100">
+       <div class="carousel-caption" >
+        <h3>SCHEMES LISTING</h3>
+         <p>
+            
+            Explore various schemes on our website, designed to support farmers with detailed methods and benefits. Enhance your agricultural practices with our expert guidance and promote sustainable, profitable farming.</p>
+       </div>
+    </div>
+    <div class="carousel-item">
+       <img src="{% static 'assets/images/Students1.jpg'%}" alt="" class="d-block w-100">
+       <div class="carousel-caption" >
+        <h3>QUERY</h3>
+        <p>
+            
+            We provide comprehensive solutions to your queries. Our expert team is ready to answer all your questions, ensuring you have the information you need.
+        </p>
+
+       </div>
+    </div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+</button>
+</div>

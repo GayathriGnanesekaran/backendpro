@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/query.css'%}">
+    
+</head>
+<body>
+    <div class="containers">
+    <div class="inputs">
+        <h4 class="py-3 px-5">SOLVE YOUR DOUBTS</h4>
+        <select name="query" id="inps" class="form-select mx-3" style="width: 350px;">
+            <option >ASK YOUR DOUBT HERE </option>
+            <option value="qn1">What are the benefits of crop rotation?</option>
+            <option value="qn2">How can soil fertility be maintained?</option>
+            <option value="qn3">What are the advantages of organic farming?</option>
+            <option value="qn4">How does precision agriculture work?</option>
+            <option value="qn5">What are GMOs and their benefits?</option>
+            <option value="qn6">How do cover crops benefit the soil?</option>
+        </select>
+    </div>
+    <div id="butt">
+        <button type="submit" class="btn btn-success my-3  text-center" onclick="answer()" style="margin-left: 120px;">ASK QUERY</button>
+
+    </div>
+    <div id="result">
+
+
+    </div>
+</div>
+<script>
+    function answer(){
+        const inpvalue=document.getElementById('inps')
+        const ans=inps.options[inps.selectedIndex].value
+        console.log(ans)
+        let text=""
+        switch(ans){
+            case 'qn1':
+                text=' Crop rotation helps improve soil fertility, reduce soil erosion, and control pests and diseases. By rotating crops, farmers can break the life cycles of pests and diseases, improve soil structure, and increase the diversity of soil microorganisms.';
+                break;
+            case 'qn2':
+                text='Soil fertility can be maintained by adding organic matter (such as compost or manure), practicing crop rotation, using cover crops, and applying balanced fertilizers. Regular soil testing is also essential to determine nutrient needs and avoid over-application of fertilizers.';    
+                break;
+            case 'qn3':
+                text='Organic farming avoids synthetic chemicals, promotes biodiversity, improves soil health, and can produce healthier food. It also focuses on sustainable practices, such as crop rotation, composting, and biological pest control.';
+                break;
+            case 'qn4':
+                text='Precision agriculture uses technology like GPS, sensors, and drones to monitor and manage crops more accurately. This allows farmers to optimize inputs like water, fertilizers, and pesticides, leading to increased efficiency, reduced waste, and better yields.';
+                break;    
+            case 'qn5':
+                text='GMOs (Genetically Modified Organisms) are plants or animals whose genetic material has been altered using biotechnology. Benefits of GMOs include increased crop yields, improved resistance to pests and diseases, reduced need for chemical inputs, and enhanced nutritional content.';
+                break;    
+            case 'qn6':
+                text='Cover crops prevent soil erosion, improve soil structure, increase organic matter, enhance nutrient cycling, and suppress weeds. They also help maintain soil moisture and provide habitat for beneficial insects.';
+                break;
+        }
+        let last=document.getElementById('result').innerHTML=text;
+    }
+</script>
+    
+</body>
+</html>

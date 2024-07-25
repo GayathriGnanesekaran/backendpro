@@ -1,0 +1,18 @@
+.picbox{
+    position: relative;
+
+}
+
+.hot{
+    background-color: yellow;
+    color: white;
+    font-weight: bold;
+    display: inline;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    right: 8px;
+    z-index: 10;
+
+}

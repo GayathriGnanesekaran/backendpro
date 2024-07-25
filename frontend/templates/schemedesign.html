@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/scheme.css'%}">
+    
+</head>
+<body>
+    <div class="containers">
+        <h4 class="py-3 text-success fw-bold" style="padding-left: 150px;">SCHEMES</h4>
+        <p class="py-3  " > GET YOUR APPLY LINK AND  TYPE IN BROWSER TO REACH THE PAGE</p>
+    <div class="inputs">
+        
+        <select name="query" id="inps" class="form-select" style="width: 470px;">
+            <option >GET LINK </option>
+            <option value="one">Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)</option>
+            <option value="two">Pradhan Mantri Fasal Bima Yojana (PMFBY)</option>
+            <option value="three">Paramparagat Krishi Vikas Yojana (PKVY)</option>
+            <option value="four">Pradhan Mantri Krishi Sinchai Yojana (PMKSY)</option>
+            <option value="five">National Food Security Mission (NFSM)</option>
+            <option value="six">Agricultural Marketing Infrastructure (AMI)</option>
+        </select>
+    </div>
+    <div id="butt">
+        <button type="submit" class="btn btn-success my-3  text-center" onclick="answer()" style="margin-left: 170px;">GET LINK</button>
+
+    </div>
+    <div id="result">
+
+
+    </div>
+</div>
+<script>
+    function answer(){
+        const inpvalue=document.getElementById('inps')
+        const ans=inps.options[inps.selectedIndex].value
+        console.log(ans)
+        let text=''
+        switch(ans){
+            case 'one':
+                text='https://pmkisan.gov.in/';
+                break;
+            case 'two':
+                text='https://pmfby.gov.in/';    
+                break;
+            case 'three':
+                text='https://pgsindia-ncof.gov.in/';
+                break;
+            case 'four':
+                text='https://pmksy.gov.in/';
+                break;    
+            case 'five':
+                text='https://nfsm.gov.in/';
+                break;    
+            case 'six':
+                text='https://agmarknet.gov.in/';
+                break;
+        }
+        let last=document.getElementById('result').innerHTML=text;
+    }
+</script>
+    
+</body>
+</html>

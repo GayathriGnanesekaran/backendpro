@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="py-3 text-center container" style="margin-top: 70px;">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-lg-8 mx-auto">
+            <h2 class="fw-light">Best Sellers</h2>
+            <p class="lead text-muted">Our most popular products based on sales and updated hourly.</p>
+            <a href="{% url 'login' %}" class="btn btn-primary my-2">Already User</a>
+            <a href="{% url 'signup' %}" class="btn btn-primary my-2">Register</a>
+       </div>
+    </div>
+</section>
+<section>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3 text-center">CATAGORIES</h4>
+            <hr style="border-color: b8bfc2;">
+            {% include 'message.html'%}
+        </div>
+        {% for item in cat %}
+        <div class="col-md-4 col-lg-3">
+            <div class="card my-3">
+                <img src="{{item.images.url}}" alt="img" class="card-image-top" style="height: 200px;">
+                <a href="{% url 'collect' item.name %}" style="text-decoration: none;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{item.name}}</h5>
+                    <p class="card-text">{{item.description}}</p>
+                    
+                </div>
+            </a>
+             </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+</section>
+
+{% endblock %}
